@@ -63,11 +63,8 @@ std::string Board::read(u_int row, u_int col, Direction dir, u_int length) {
                  col > this->col ? col + length + 1 : this->col + length);
   }
   for (u_int i = 0; i < length; i++) { // add the post to the string
-    post +=
-        (this->mat
-             .at((unsigned long)(row + (Direction::Vertical == dir ? i : 0)))
-             .at((unsigned long)(col +
-                                 (Direction::Horizontal == dir ? i : 0))));
+    post += (this->mat.at((row + (Direction::Vertical == dir ? i : 0)))
+                 .at((col + (Direction::Horizontal == dir ? i : 0))));
   }
   return post;
 }
